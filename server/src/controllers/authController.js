@@ -29,11 +29,11 @@ export const login = async (req, res) => {
         if(!passwordCorrecto) return error(res, 400, 'Datos incorrectos');
 
         //Se genera el token
-        const token = generarToken(usuario, process.env.SECRETA || 'Equimotica', '24h');
+        const token = generarToken(usuario, process.env.SECRET_KEY || 'Equinoccio', '24h');
         success(res, {token});
 
-    }catch(error){
-        console.log(chalk.red(error));
+    }catch(err){
+        console.log(chalk.red(err));
         error(res, 500);
     }
 

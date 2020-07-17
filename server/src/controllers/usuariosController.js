@@ -9,8 +9,8 @@ export const listarUsuarios = async (req, res) => {
     try{
         const usuarios = await Usuario.find();
         success(res, usuarios);
-    }catch(error){
-        console.log(chalk.red(error));
+    }catch(err){
+        console.log(chalk.red(err));
         error(res, 500);
     }
 }
@@ -28,8 +28,8 @@ export const obtenerUsuario = async (req, res) => {
         // Se devuelve los datos del usuario
         success(res, {usuario});
 
-    }catch(error){
-        console.log(chalk.red(error));
+    }catch(err){
+        console.log(chalk.red(err));
         error(res, 500);    
     }
 
@@ -58,8 +58,8 @@ export const nuevoUsuario = async (req, res) => {
         await usuario.save();
         success(res,'Usuario creado correctamente');
     
-    }catch(error){
-        console.log(chalk.red(error));
+    }catch(err){
+        console.log(chalk.red(err));
         error(res, 500);
     }
 }
@@ -87,8 +87,8 @@ export const actualizarUsuario = async (req, res) => {
         await Usuario.findOneAndUpdate({_id:id},req.body);
         success(res, 'Usuario actualizado correctamente');
 
-    }catch(error){
-        console.log(chalk.red(error));
+    }catch(err){
+        console.log(chalk.red(err));
         error(res, 500);
     }
 
@@ -112,8 +112,8 @@ export const eliminarUsuario = async (req, res) => {
         await Usuario.findOneAndDelete({_id:id});
         success(res, 'Usuario eliminado correctamente');
 
-    }catch(error){
-        console.log(chalk.red(error));
+    }catch(err){
+        console.log(chalk.red(err));
         error(res, 500);
     }
 
