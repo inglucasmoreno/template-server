@@ -9,9 +9,7 @@ import { jwtConstants } from './auth/constants';
 import { InicializacionModule } from './inicializacion/inicializacion.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { SocketModule } from './socket/socket.module';
 import { ConfigModule } from '@nestjs/config';
-import { RenaperModule } from './renaper/renaper.module';
 
 @Module({
   imports: [
@@ -39,7 +37,6 @@ import { RenaperModule } from './renaper/renaper.module';
     UsuariosModule, 
     AuthModule,
     InicializacionModule,  // Para inicializacion de tablas - Configurable en el controlador/servicio
-    SocketModule, RenaperModule,          // Para trabajar con WebSocket
     
   ],
   

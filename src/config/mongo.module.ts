@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-@Module({ imports: [MongooseModule.forRoot('mongodb://localhost/renaper')] })
+@Module({ imports: [MongooseModule.forRoot('mongodb://localhost/template')] })
 export class MongoModule {}
